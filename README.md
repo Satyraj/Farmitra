@@ -4,4 +4,4 @@
 
 #### This project's refrence is taken form [Krish Naik's](https://www.youtube.com/channel/UCNU_lfiiWBdtULKOw6X0Dig)
 
-*** - In this project, I present a website in which the following applications are implemented; Crop recommendation, Fertilizer recommendation. Moreover, it is a simple Ml and DL based project for the beginner level. These Technologeis are being implemented into agriculrure so that it is easier for farmers. ***
+ **- In this project, I present a website in which the following applications are implemented; Crop recommendation, Fertilizer recommendation. Moreover, it is a simple Ml and DL based project for the beginner level. These Technologeis are being implemented into agriculrure so that it is easier for farmers.**
