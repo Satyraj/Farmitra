@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Font-Awesome -->
+
+    <script src="https://kit.fontawesome.com/97132b68f0.js" crossorigin="anonymous"></script>
+  
+</head>
+<body> 
+  <section>
+    <div id="intro" class="bg-image" style="
+        background-image: url('/static/images/farm_background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 120vh;
+      ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="container d-flex justify-content-center align-items-center h-100">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <h1 class="mb-0 text-white"></h1>
+        </div>
+      </div>
+    </div>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll" style="background-color: rgba(0, 0, 0, 0.5);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img src="/static/images/fmt.png" alt="" width="60" height="34">
+        </a>
+      <a class="navbar-brand" href="#!" style="color: aliceblue;">Farmitra</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="/" style="color: aliceblue;">Home <span class="sr-only"></span></a>
+            <!-- <a class="nav-link active" aria-current="page" href="#!">Home</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about" style="color: aliceblue;">About</a>
+          </li>
+        
+          <li class="nav-item">
+              <a class="nav-link" href="/croppredict" style="color: aliceblue;">Crop-Predict</a>
+          </li>
+      
+           <li class="nav-item">
+              <a class="nav-link" href="/fpredict" style="color: aliceblue;">Fertilizer-Predict</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/dashboard" style="color: aliceblue;">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact" style="color: aliceblue;">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  <div class="container">
+    <h2 class="text-center mt-3"></h2>
+   <!-- <h2 style="text-align: center; margin: 0px; color: black">
+        <b>Get informed advice on fertilizer based on soil</b>
+      </h2> -->
+      <br />
+      
+      <div style="width: 350px;
+          height: 40rem;
+          margin: 0px auto;
+          color: black;
+          border-radius: 25px;
+          padding: 10px 10px;">
+          
+        <form action="/fpredict" method="POST">
+          <br>
+          <!-- <br> -->
+          <h2 style="text-align: center; margin: 0px; color: black">
+            <b>Get informed advice on fertilizer based on soil</b>
+          </h2>
+          <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Nitrogen"
+              name="nitrogen"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="Phosphorous" style="font-size: 17px"
+              ><b>Phosphorous</b></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="Phosphorous"
+              name="phosphorous"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+      
+          <div class="form-group">
+            <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Pottasium"
+              name="pottasium"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+          <!-- <div class="form-group">
+            <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+            <input
+              type="text"
+              class="form-control"
+              id="ph"
+              name="ph"
+              placeholder="Enter the value"
+              style="font-weight: bold"
+              required
+            />
+          </div> -->
+          <div class="form-group">
+            <label for="crop" style="font-size: 17px"
+              ><b>Crop you want to grow</b></label
+            >
+            <select
+              name="cropname"
+              class="form-control"
+              id="crop"
+              placeholder="Select a crop"
+              style="font-weight: bold"
+              required
+            >
+              <option selected>Select crop</option>
+              <option>rice</option>
+              <option>maize</option>
+              <option>chickpea</option>
+              <option>kidneybeans</option>
+              <option>pigeonpeas</option>
+              <option>mothbeans</option>
+              <option>mungbean</option>
+              <option>blackgram</option>
+              <option>lentil</option>
+              <option>pomegranate</option>
+              <option>banana</option>
+              <option>mango</option>
+              <option>grapes</option>
+              <option>watermelon</option>
+              <option>muskmelon</option>
+              <option>apple</option>
+              <option>orange</option>
+              <option>papaya</option>
+              <option>coconut</option>
+              <option>cotton</option>
+              <option>jute</option>
+              <option>coffee</option>
+            </select>
+          </div>
+      
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-info"
+              style="
+                color: black;
+                font-weight: bold;
+                width: 130px;
+                height: 50px;
+                border-radius: 12px;
+                font-size: 21px;
+              "
+            >
+              Predict
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

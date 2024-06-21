@@ -1,0 +1,27 @@
+[
+  {
+    "State": 2,
+    "Area": 102.0,
+    "Production": 321.0
+  },
+  {
+    "State": 12,
+    "Area": 83.0,
+    "Production": 300.0
+  },
+  {
+    "State": 18,
+    "Area": 189.2,
+    "Production": 510.84
+  },
+  {
+    "State": 27,
+    "Area": 52.0,
+    "Production": 90.17
+  },
+  {
+    "State": 36,
+    "Area": 52.94,
+    "Production": 72.57
+  }
+]

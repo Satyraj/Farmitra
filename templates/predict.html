@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+  background-color: white;
+}
+
+
+.crop-p {
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: x-large;
+  margin-left: 3%;
+  margin-top: 11%;
+}
+
+.predict_crop_btn {
+  background-color: #10a37f;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 16rem;
+}
+
+.predict_crop_btn:hover {
+  background-color: #007553;
+}
+
+.predict_crop_btn:active {
+  transform: scale(0.95, 0.95);
+}
+
+.crop-container {
+  margin-left: 32%;
+  display: inline-grid;
+  grid-template-columns: 250px 250px;
+  column-gap: 50px;
+  row-gap: 40px;
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 220-780px */
+@media (220px <= width <= 780px) {
+  .crop-p {
+    font-size: large;
+    text-align: center;
+    width: 83%;
+    margin: 0;
+    margin-right: 12%;
+    margin-left: -5%;
+    margin-top: 10%;
+  }
+
+  .crop-container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    margin-right: 21%;
+    margin-left: 20%;
+    width: min-content;
+  }
+
+  .predict_crop_btn {
+    margin-top: 5%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 415-780px */
+@media (415px <= width <= 780px) {
+  .crop-p {
+    font-size: x-large;
+    /* margin-left: 22%; */
+  }
+
+  .crop-container {
+    margin-left: 38%;
+    max-width: max-content;
+  }
+}
+
+/* CSS for width between 575-630px */
+@media (575px <= width <= 630px) {
+  /* .crop-p {
+    /* margin-left: 17%; */
+  /* }  */
+}
+
+/* CSS for width between 630-780px */
+@media (630px <= width <= 780px) {
+  /* .crop-p {
+    /* margin-right: 13%; */
+    /* margin-left: 13%; */
+  /* }  */
+
+  .crop-container {
+    margin-left: 35%;
+  }
+}
+
+/*------------------------------------------------------------------------*/
+
+/* CSS for width between 780-975px */
+@media (780px <= width <= 975px) {
+  .crop-p {
+    /* margin-right: 10%;
+    margin-left: 15%; */
+    text-align: center;
+  }
+
+  .crop-container {
+    margin: 0;
+    padding: 0;
+    margin-left: 18%;
+  }
+}
+
+/* CSS for width between 910-1250px */
+@media (910px <= width <= 1250px) {
+  .crop-p {
+    /* margin-right: 10%;
+    margin-left: 15%; */
+    text-align: center;
+  }
+
+  .crop-container {
+    margin: 0;
+    padding: 0;
+    margin-left: 25%;
+  }
+}
+@media (max-width: 991px) {
+  .navbar-scroll {
+    background-color: #fff;
+  }
+     
+  .navbar-scroll .navbar-brand,
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color: #4f4f4f !important;
+  }         
+}
+
+.navbar-brand {
+  letter-spacing: 3px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.navbar-scroll .navbar-brand,
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+  color: #fff;
+}
+
+.navbar-scroll {
+  box-shadow: none;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #4f4f4f;
+}
+
+.navbar-scrolled {
+  background-color: #fff;
+}
+
+@media (max-width: 450px) {
+  #intro {
+    height: 950px !important;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 750px) {
+  #intro {
+    height: 1100px !important;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 990px) {
+  #intro {
+    height: 600px !important;
+  }
+}
+
+.display-1 {
+  font-weight: 500 !important;
+  letter-spacing: 40px;
+  font-size: 25rem;
+}
+
+@media (min-width: 1600px) {
+  .display-1 {
+    font-size: 10rem;
+  }
+}
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+   
+</head>
+
+<body>
+  <!-- Navbar -->
+  <section>
+    <div id="intro" class="bg-image" style="
+        background-image: url('/static/images/farm_background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 120vh;
+      ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="container d-flex justify-content-center align-items-center h-100">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <h1 class="mb-0 text-white"></h1>
+        </div>
+      </div>
+    </div>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll" style="background-color: rgba(0, 0, 0, 0.5);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img src="/static/images/fmt.png" alt="" width="60" height="34">
+        </a>
+      <a class="navbar-brand" href="#!">Farmitra</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+            <!-- <a class="nav-link active" aria-current="page" href="#!">Home</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        
+          <li class="nav-item">
+              <a class="nav-link" href="/croppredict">Crop-Predict</a>
+          </li>
+      
+           <li class="nav-item">
+              <a class="nav-link" href="/fpredict">Fertilizer-Predict</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Section: Design Block-->
+  <!-- <section>
+    <div id="intro" class="bg-image" style="
+        background-image: url('/static/images/farm_background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 120vh;
+      "> -->
+      <!-- <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="container d-flex justify-content-center align-items-center h-100">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <h1 class="mb-0 text-white display-1"></h1>
+            </div>
+          </div>
+        </div>
+      </div> -->
+   
+  <!--Section: Design Block-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">AgriCrop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/predict">Predict</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only"></span></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav> -->
+    
+    <div class="container">
+        <h2 class="text-center mt-3"></h2>
+
+        <form action="/croppredict" method="POST">
+          <!-- <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="container d-flex justify-content-center align-items-center h-100">
+              <div class="row align-items-center">
+                <div class="col-12">
+                  <h1 class="mb-0 text-white display-1"></h1>
+                </div>
+              </div>
+            </div> -->
+         
+            <center><p class="crop-p justify-content-center"> Enter soil characteristics to find the  best <b> CROP </b> to grow on your farm 👩‍🌾🌽🚜</p>
+        </center> 
+
+            <div class="form-group">
+                <label for="nitrogen-crop-input">Ratio of Nitrogen</label>
+        <!-- <input id="nitrogen-crop-input" type="number" class="outlined-input" /> -->
+                <!-- <label for="concavemean">Enter the ammount of Nitrogen</label> -->
+                <input type="text" class="form-control" id="nitrogen" name="nitrogen" placeholder="Enter the ammount of Nitrogen" class="outlined-input">
+            </div>
+            <div class="form-group">
+                <label for="phosphorous-crop-input">Ratio of Phosphorous</label>
+                <input type="text" class="form-control" id="phosphorus" name="phosphorus" placeholder="Enter the ammount for Phosphorus" class="outlined-input">
+
+            </div>
+            <div class="form-group">
+                <label for="radworst"> Enter the ammount of Potassium</label>
+                <input type="text" class="form-control" id="potassium" name="potassium" placeholder="Enter the ammount of Potassium">
+            </div>
+            <div class="form-group">
+                <label for="perworst">Enter the value for Temperature</label>
+                <input type="text" class="form-control" id="temperature" name="temperature" placeholder="Enter the value for Temperature">
+            </div>
+
+            <!-- humidity -->
+            <div class="form-group">
+                <label for="perworst">Enter the value for Humidity</label>
+                <input type="text" class="form-control" id="humidity" name="humidity" placeholder="Enter the value for Humidity">
+            </div>
+
+            <!-- ph -->
+
+            <div class="form-group">
+                <label for="perworst">Enter the ph value of the soil</label>
+                <input type="text" class="form-control" id="ph" name="ph" placeholder="Enter pH value of the soil">
+            </div>
+
+            <!-- rainfall -->
+
+            <div class="form-group">
+                <label for="perworst">Enter the value of Rainfall</label>
+                <input type="text" class="form-control" id="rainfall" name="rainfall" placeholder="Enter the value for Rainfall">
+            </div>
+
+
+
+            <div class="col-md-12 text-center">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Predict</button>
+            </div>
+
+        </form>
+
+
+    </div>
+  </div>
+</section>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+</body>
+
+</html>
