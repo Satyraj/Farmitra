@@ -14,3 +14,7 @@
 ## Data Source 📊
       - [Crop recommendation dataset ](https://www.kaggle.com/atharvaingle/crop-recommendation-dataset) (custom built dataset)
       - [Fertilizer suggestion dataset](https://github.com/Gladiator07/Harvestify/blob/master/Data-processed/fertilizer.csv) (custom built dataset)
+## How to run ?
+- Should have all the reqired files and frameworks.
+- Once the whole project is cloned, Open the terminal and run ''' python app.py '''
+- Finally, opne the localhost of your browser.
