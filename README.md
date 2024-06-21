@@ -5,3 +5,7 @@
 #### This project's refrence is taken form [Krish Naik's](https://www.youtube.com/channel/UCNU_lfiiWBdtULKOw6X0Dig)
 
  **- In this project, I present a website in which the following applications are implemented; Crop recommendation, Fertilizer recommendation. Moreover, it is a simple Ml and DL based project for the beginner level. These Technologeis are being implemented into agriculrure so that it is easier for farmers.**
+      - In the crop recommendation application, the user can provide the soil data from their side and the application will predict which crop should the user grow.
+
+- For the fertilizer recommendation application, the user can input the soil data and the type of crop they are growing, and the application will predict what the soil lacks or has excess of and will recommend improvements. 
+      
