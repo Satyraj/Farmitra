@@ -18,3 +18,6 @@
 - Should have all the reqired files and frameworks.
 - Once the whole project is cloned, Open the terminal and run ''' python app.py '''
 - Finally, opne the localhost of your browser.
+
+
+## Further Improvment 📈
